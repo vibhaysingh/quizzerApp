@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizzerApp</title>
+    <link rel="stylesheet" href="quiz.css" />
+  </head>
+
+  <body>
+    <!-- quote -->
+    <div class="intro">
+      <p>Quizzer</p>
+    </div>
+    <!-- start quiz button  -->
+    <div class="start-button">
+      <button onclick="startquiz()">Start Quiz</button>
+    </div>
+    <!-- instruction for quiz -->
+
+    <div class="instructions">
+      <h2>Instructions</h2>
+      <p>1. You will be alloted <span>15 second</span> for each question.</p>
+      <p>2. You can't choose options once the time runs out.</p>
+      <p>
+        3. Don't forget to click <b>SUBMIT </b> button after choosing your
+        option.
+      </p>
+      <p>4. Once submitted you can't modify your selection.</p>
+      <p>5. You can't see the previous question.</p>
+      <p>6. There is one points for each correct answer.</p>
+      <div class="button">
+        <button class="quit" onclick="quitbtn()">Quit</button>
+        <button class="continue" onclick="continuebtn()">Continue</button>
+      </div>
+    </div>
+
+    <div class="quiz-box">
+      <header>
+        <div class="counter">
+          <span>1</span>
+          <span>/</span>
+          <span>5</span>
+          <span>question</span>
+        </div>
+        <div class="timer-box">
+          <span>Time Left :</span>
+          <span class="timer">15</span>
+        </div>
+        <div class="time-bar">
+          <!-- <p>This is time bar</p> -->
+        </div>
+      </header>
+      <section>
+        <h2 id="question">Question Text</h2>
+        <ul>
+          <li class="listclass" id="list1" onclick="selectList1()">
+            <input type="radio" id="a" name="answer" class="answer" />
+            <label id="a_text" for="a">Option 1 </label>
+          </li>
+
+          <li class="listclass" id="list2" onclick="selectList2()">
+            <input type="radio" id="b" name="answer" class="answer" />
+            <label id="b_text" for="b">Option 2</label>
+          </li>
+
+          <li class="listclass" id="list3" onclick="selectList3()">
+            <input type="radio" id="c" name="answer" class="answer" />
+            <label id="c_text" for="c">Option 3</label>
+          </li>
+
+          <li class="listclass" id="list4" onclick="selectList4()">
+            <input type="radio" id="d" name="answer" class="answer" />
+            <label id="d_text" for="d">Option 4</label>
+          </li>
+        </ul>
+      </section>
+      <footer>
+        <button class="submit-btn" disabled>Submit</button>
+        <button class="next-btn">Next</button>
+      </footer>
+    </div>
+
+    <div class="result-box">
+      <h1>Score Board</h1>
+      <div class="wrapper">
+        <span>1</span>
+        <span>/</span>
+        <span>5</span>
+      </div>
+      <div class="performance">
+        <p>Excellent</p>
+      </div>
+      <button class="homebtn" onclick="clickhome()">Home</button>
+    </div>
+
+    <audio
+      src="./correctaudio.mp3"
+      preload="auto"
+      type="audio/mpeg"
+      id="audio_corr"
+    ></audio>
+    <audio
+      preload="auto"
+      src="./wrongaudio.mp3"
+      type="audio/mpeg"
+      id="audio_wron"
+    ></audio>
+    <audio src="./applauseaudio.mp3" type="audio/mpeg" id="audio_appl"></audio>
+    <script src="quiz.js"></script>
+  </body>
+</html>

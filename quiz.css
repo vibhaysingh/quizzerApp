@@ -1,0 +1,326 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(31, 18, 88);
+}
+.intro {
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  position: relative;
+  margin-top: 2%;
+  border: white solid 2px;
+  width: 40%;
+  margin-left: 30%;
+  padding: 10px 0px;
+  border-radius: 5px;
+  /* display: none; */
+}
+.start-button,
+.instructions,
+.quiz-box,
+.result-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.start-button button {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(187, 42, 187);
+  padding: 12px 25px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  /* display: none; */
+}
+.start-button button:hover {
+  background: rgba(240, 234, 234, 0.973);
+}
+.instructions {
+  display: none;
+  width: 540px;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.instructions h2 {
+  height: 50px;
+  text-align: center;
+  font-size: 30px;
+  border-bottom: 1px solid grey;
+  padding: 5px;
+  text-transform: uppercase;
+  background: #e70c9e;
+  color: white;
+}
+.instructions p {
+  padding: 8px 35px;
+  font-weight: 600;
+}
+.instructions p span {
+  color: rgb(245, 9, 9);
+  font-weight: bold;
+}
+.button {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 35px;
+  /* border-top: 1px solid grey; */
+}
+.button .quit,
+.button .continue {
+  margin: 0 5px;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  outline: none;
+  /* border: solid 1px #007bff;
+    background: #007bff; */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button .quit {
+  border: solid 1px #007bff;
+  color: #007bff;
+}
+.button .continue {
+  border: solid 1px #007bff;
+  background: #007bff;
+}
+.button .quit:hover {
+  background: #007bff;
+  color: white;
+}
+.button .continue:hover {
+  background: #07407e;
+}
+.quiz-box {
+  background: white;
+  width: 540px;
+  border-radius: 5px;
+  display: none;
+}
+.quiz-box header {
+  height: 60px;
+  padding: 0 2px;
+  border-bottom: grey solid 1px;
+}
+.quiz-box header .timer-box {
+  float: right;
+  margin: 10px 20px;
+  padding: 10px;
+  background: rgb(34, 87, 84);
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  height: 40px;
+}
+.quiz-box header .counter {
+  float: left;
+  background: rgb(34, 87, 84);
+  margin-top: 14px;
+  padding: 0 40px;
+  color: white;
+  font-weight: bold;
+  height: 40px;
+  padding: 10px;
+  border-radius: 3px;
+  margin-left: 15px;
+}
+.quiz-box header .time-bar {
+  --level: 100%;
+  clear: left;
+  height: 6px;
+  position: relative;
+  top: 13px;
+  background-color: rgb(9, 182, 75);
+  width: var(--level);
+  top: 6px;
+}
+.quiz-box section h2 {
+  margin-top: 10px;
+  padding: 15px 10px;
+}
+.quiz-box section li {
+  list-style-type: none;
+  margin: 10px;
+  border: solid 1px rgb(42, 42, 219);
+  padding: 10px;
+  font-weight: bold;
+  background: rgb(235, 240, 241);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding-left: 20px;
+}
+/* .quiz-box  section li:hover,.stylelist:hover{
+    background: rgb(113, 208, 231) !important; 
+}*/
+.quiz-box section li label {
+  cursor: pointer;
+}
+.quiz-box section li input {
+  margin-right: 5px;
+  display: none;
+}
+.quiz-box footer button {
+  border: solid 1px #007bff;
+  font-size: 22px;
+  padding: 8px;
+  outline: none;
+  background-color: #007bff;
+  border-radius: 5px;
+  color: white;
+  margin: 10px 0px;
+  cursor: pointer;
+  margin-left: 21%;
+  width: 100px;
+  /* transition: all 0.5s ease; */
+}
+.quiz-box footer .submit-btn {
+  background: none;
+  background-color: #93e0ae;
+  /* border: solid 1px #0ba518;  */
+  border: none;
+}
+/* .quiz-box  footer .submit-btn:hover{
+background-color: #05790f;
+} */
+.quiz-box footer .next-btn:hover {
+  background-color: #114f91;
+}
+/* &#9989 tick code */
+/* &#10060  cross code */
+.x {
+  background: #e70c9e;
+}
+.verdict_icons {
+  float: right;
+  color: red;
+}
+.result-box {
+  width: 540px;
+  background: white;
+  border-radius: 5px;
+  height: 400px;
+  display: none;
+  overflow: hidden;
+}
+.result-box h1 {
+  height: 50px;
+  text-align: center;
+  font-size: 30px;
+  border-bottom: 1px solid grey;
+  padding: 5px;
+  text-transform: uppercase;
+  background: #ee76c6;
+  background: #e70c9e;
+  color: white;
+}
+.wrapper {
+  width: 150px;
+  height: 100px;
+  position: absolute;
+  left: 36%;
+  top: 20%;
+  border: double 7px greenyellow;
+  padding: 2.8%;
+  padding-left: 5.2%;
+  border-radius: 7px;
+  background-color: rgba(170, 235, 20, 0.575);
+}
+.wrapper span {
+  font-size: 50px;
+}
+.result-box .performance {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  font-weight: bold;
+  font-size: 45px;
+  width: 100%;
+  /* border: red solid 1px; */
+}
+.result-box .performance p {
+  text-align: center;
+  /* border: red solid 1px; */
+}
+.result-box .homebtn {
+  width: 150px;
+  height: 42px;
+  font-weight: bold;
+  font-size: large;
+  background: #e70c9e;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  position: absolute;
+  bottom: 30px;
+  left: 36%;
+}
+.result-box .homebtn:hover {
+  background: purple;
+}
+
+@media screen and (max-width: 500px) {
+  .intro {
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 10%;
+  }
+  .start-button button {
+    height: 60px;
+    width: 120%;
+    padding: 5%;
+    margin-left: -10%;
+  }
+  .instructions {
+    width: 90%;
+    margin-top: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .quiz-box {
+    width: 90%;
+    top: 60%;
+    margin-bottom: 5%;
+  }
+  .quiz-box footer button {
+    margin-left: 13%;
+  }
+  .quiz-box header .timer-box {
+    margin-top: 4.4%;
+  }
+  .result-box {
+    width: 90%;
+    top: 60%;
+    margin-bottom: 5%;
+    overflow: hidden;
+  }
+  .wrapper {
+    margin-left: -1%;
+    padding: 5%;
+    padding-left: 9%;
+    left: 32%;
+  }
+  .result-box .homebtn {
+    left: 30%;
+  }
+}
+/* this is latest file */
