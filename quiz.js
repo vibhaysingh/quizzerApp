@@ -41,6 +41,7 @@
 //     }
 
 // ];
+
 window.onload = sendApirequest;
 const questionList = [];
 const optionList = [[], [], [], [], []];
